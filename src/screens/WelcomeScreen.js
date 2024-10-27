@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import Button from '../components/Button';
 import { Colors } from '../constants/Colors';
+import { Typography } from '../constants/Typography';
 
 const WelcomeScreen = ({ navigation }) => {
     const onPressHandler = () => {
@@ -35,13 +36,7 @@ const WelcomeScreen = ({ navigation }) => {
                                 <Text style={styles.subTitle}>Simple way to find Tasty Recipe</Text>
                             </View>
                             <View style={styles.footerButton}>
-                                <Button
-                                    name="icon-arrow-right-outline"
-                                    text="Start Cooking"
-                                    size={18}
-                                    hasIcon
-                                    onPress={onPressHandler}
-                                />
+                                <Button size="medium" onPress={onPressHandler} text="Start Cooking" />
                             </View>
                         </View>
                     </SafeAreaView>
@@ -65,34 +60,34 @@ const styles = StyleSheet.create({
         marginBottom: '20%',
     },
     headerContainer: {
+        flex: 1,
         alignItems: 'center',
         gap: 14,
     },
     headerText: {
         color: Colors.neutral.white,
-        fontSize: 17,
-        fontWeight: 'bold',
+        ...Typography.bold.medium,
     },
     footerContainer: {
-        width: '70%',
-        gap: 64,
+        flex: 1,
+        gap: '64%',
+        justifyContent: 'center',
         alignItems: 'center',
     },
     titleContainer: {
-        gap: 20,
+        gap: '20%',
     },
     footerTitle: {
         color: Colors.neutral.white,
-        fontSize: 60,
+        fontSize: 55,
         textAlign: 'center',
         fontWeight: 'bold',
     },
     subTitle: {
         color: Colors.neutral.white,
-        fontSize: 20,
-        fontWeight: '300',
+        ...Typography.bold.normal,
     },
     footerButton: {
-        width: '100%',
+        width: '70%',
     },
 });

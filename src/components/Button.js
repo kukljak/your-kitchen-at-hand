@@ -2,17 +2,18 @@ import { StyleSheet, Text, Pressable, View } from 'react-native';
 
 import Icon from './Icon';
 import { Colors } from '../constants/Colors';
+import { Typography } from '../constants/Typography';
 
-const Button = ({ hasIcon, text, size, onPress, name }) => {
+const Button = ({ onPress, text, size }) => {
     return (
         <Pressable
-            style={({ pressed }) => (pressed ? [styles.buttonContainer, styles.pressedButton] : styles.buttonContainer)}
+            style={({ pressed }) => [styles.buttonContainer, styles[size], pressed && styles.pressedButton]}
             onPress={onPress}
         >
             <Text style={styles.buttonText}>{text}</Text>
-            {hasIcon && (
+            {size !== 'small' && (
                 <View style={styles.icon}>
-                    <Icon name={name} size={size} color={Colors.neutral.white} />
+                    <Icon name="icon-arrow-right-outline" size={18} color={Colors.neutral.white} />
                 </View>
             )}
         </Pressable>
@@ -23,8 +24,6 @@ export default Button;
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        paddingHorizontal: 50,
-        paddingVertical: 15,
         backgroundColor: Colors.primary.primary100,
         borderRadius: 10,
         flexDirection: 'row',
@@ -35,14 +34,25 @@ const styles = StyleSheet.create({
         opacity: 0.8,
     },
     buttonText: {
+        minWidth: 114,
         color: Colors.neutral.white,
         textAlign: 'center',
-        fontWeight: 'bold',
-        fontSize: 20,
+        ...Typography.bold.normal,
     },
     icon: {
-        height: 20,
         color: Colors.neutral.white,
         alignSelf: 'flex-end',
+    },
+    large: {
+        paddingHorizontal: 85,
+        paddingVertical: 18,
+    },
+    medium: {
+        paddingHorizontal: 50,
+        paddingVertical: 15,
+    },
+    small: {
+        paddingHorizontal: 30,
+        paddingVertical: 10,
     },
 });

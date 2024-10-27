@@ -4,5 +4,10 @@ module.exports = {
     plugins: ['prettier'],
     rules: {
         'prettier/prettier': 'error',
+        'no-unused-vars': 'error',
+        'no-const-assign': 'error',
+        'no-empty': 'error',
+        'no-empty-function': 'error',
+        'newline-before-return': 'error',
     },
 };
