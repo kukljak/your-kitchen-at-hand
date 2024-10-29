@@ -6,9 +6,11 @@ import { Typography } from '../constants/Typography';
 
 const TextButton = ({ text, onPress }) => {
     const [isPressed, setPressed] = useState(false);
+    const onPressIn = () => setPressed(true);
+    const onPressOut = () => setPressed(false);
 
     return (
-        <Pressable onPress={onPress} style={({ pressed }) => (pressed ? setPressed(true) : setPressed(false))}>
+        <Pressable onPress={onPress} onPressIn={onPressIn} onPressOut={onPressOut}>
             <Text style={[styles.text, isPressed && styles.pressed]}>{text}</Text>
         </Pressable>
     );
@@ -17,6 +19,6 @@ const TextButton = ({ text, onPress }) => {
 export default TextButton;
 
 const styles = StyleSheet.create({
-    text: { color: Colors.secondary.secondary100, ...Typography.bold.smaller },
+    text: { color: Colors.secondary.secondary100, ...Typography.bold.small },
     pressed: { color: Colors.secondary.secondary60 },
 });

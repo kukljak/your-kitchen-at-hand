@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     socialMediaBox: {
         backgroundColor: Colors.neutral.white,
         borderRadius: 10,
-        height: 44,
-        width: 44,
+        height: 50,
+        width: 50,
         alignItems: 'center',
         justifyContent: 'center',
         shadowColor: Colors.neutral.gray3,

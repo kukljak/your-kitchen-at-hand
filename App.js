@@ -5,6 +5,7 @@ import { useFonts } from 'expo-font';
 
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import LoginScreen from './src/screens/auth/LoginScreen';
+import RegisterScreen from './src/screens/auth/RegisterScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
                 <Stack.Navigator>
                     <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} options={{ headerShown: false }} />
                     <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
+                    <Stack.Screen name="RegisterScreen" component={RegisterScreen} options={{ headerShown: false }} />
                 </Stack.Navigator>
             </NavigationContainer>
         </>

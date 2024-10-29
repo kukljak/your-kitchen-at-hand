@@ -4,7 +4,7 @@ import { StyleSheet, TextInput as Input, Text, View } from 'react-native';
 import { Colors } from '../constants/Colors';
 import { Typography } from '../constants/Typography';
 
-const TextInput = ({ disabled, label, placeholder, type }) => {
+const TextInput = ({ disabled, label, placeholder, type, ...props }) => {
     const [isFocused, setFocused] = useState(false);
     let keyboardType;
 
@@ -28,6 +28,7 @@ const TextInput = ({ disabled, label, placeholder, type }) => {
                 placeholder={placeholder}
                 placeholderTextColor={disabled ? Colors.neutral.gray2 : Colors.neutral.gray4}
                 style={[styles.input, disabled && styles.disabledInput, isFocused && styles.onFocusInput]}
+                {...props}
             />
         </View>
     );

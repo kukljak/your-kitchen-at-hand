@@ -8,7 +8,7 @@ import TextButton from '../../components/TextButton';
 import Button from '../../components/Button';
 import SocialMediaLogin from '../../components/SocialMediaLogin';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     return (
         <>
             <StatusBar style="dark" />
@@ -22,7 +22,7 @@ const LoginScreen = () => {
                         <View>
                             <View style={styles.inputsContainer}>
                                 <TextInput placeholder="Enter Email" label="Email" type="email" />
-                                <TextInput placeholder="Enter Password" label="Enter Password" />
+                                <TextInput placeholder="Enter Password" label="Enter Password" secureTextEntry={true} />
                             </View>
                             <View style={styles.forgotPassword}>
                                 <TextButton text="Forgot Password?" />
@@ -41,7 +41,7 @@ const LoginScreen = () => {
                         </View>
                         <View style={styles.signUpContainer}>
                             <Text style={styles.signUpText}>Don't have an account? </Text>
-                            <TextButton text="Sign up" />
+                            <TextButton text="Sign up" onPress={() => navigation.navigate('RegisterScreen')} />
                         </View>
                     </View>
                 </SafeAreaView>
@@ -101,6 +101,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     signUpText: {
-        ...Typography.bold.smaller,
+        ...Typography.bold.small,
     },
 });
