@@ -34,7 +34,7 @@ const RegisterScreen = ({ navigation }) => {
                                 innerIconStyle={{ borderRadius: 5 }}
                             />
                         </View>
-                        <Button text="Sign Up" size="large" />
+                        <Button text="Sign Up" size="large" onPress={() => navigation.navigate('TabsNavigator')} />
                         <View style={styles.otherLoginContainer}>
                             <View style={styles.otherLoginTextContainer}>
                                 <View style={styles.horizontalBar} />

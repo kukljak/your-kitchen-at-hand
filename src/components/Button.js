@@ -1,6 +1,6 @@
 import { StyleSheet, Text, Pressable, View } from 'react-native';
+import FontAwesom6Icon from 'react-native-vector-icons/FontAwesome6';
 
-import Icon from './Icon';
 import { Colors } from '../constants/Colors';
 import { Typography } from '../constants/Typography';
 
@@ -13,7 +13,7 @@ const Button = ({ onPress, text, size }) => {
             <Text style={styles.buttonText}>{text}</Text>
             {size !== 'small' && (
                 <View style={styles.icon}>
-                    <Icon name="icon-arrow-right-outline" size={18} color={Colors.neutral.white} />
+                    <FontAwesom6Icon name="arrow-right-long" size={18} color={Colors.neutral.white} />
                 </View>
             )}
         </Pressable>

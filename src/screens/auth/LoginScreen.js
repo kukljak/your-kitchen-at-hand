@@ -27,7 +27,7 @@ const LoginScreen = ({ navigation }) => {
                             <View style={styles.forgotPassword}>
                                 <TextButton text="Forgot Password?" />
                             </View>
-                            <Button text="Sign In" size="large" />
+                            <Button text="Sign In" size="large" onPress={() => navigation.navigate('TabsNavigator')} />
                             <View style={styles.otherLoginContainer}>
                                 <View style={styles.otherLoginTextContainer}>
                                     <View style={styles.horizontalBar} />
