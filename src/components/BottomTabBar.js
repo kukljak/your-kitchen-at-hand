@@ -33,14 +33,14 @@ const BottomTabBar = (props) => {
                         <Ionicons
                             name={currentScreen === 'HomeScreen' ? 'home' : 'home-outline'}
                             size={iconSize}
-                            color={currentScreen === 'HomeScreen' ? Colors.green : Colors.neutral.black}
+                            color={currentScreen === 'HomeScreen' ? Colors.primary.primary100 : Colors.neutral.black}
                         />
                     </Pressable>
                     <Pressable>
                         <Ionicons
                             name={currentScreen === 'ScreenName' ? 'bookmark' : 'bookmark-outline'}
                             size={iconSize}
-                            color={currentScreen === 'ScreenName' ? Colors.green : Colors.neutral.black}
+                            color={currentScreen === 'ScreenName' ? Colors.primary.primary100 : Colors.neutral.black}
                         />
                     </Pressable>
                 </View>
@@ -49,12 +49,12 @@ const BottomTabBar = (props) => {
                     <SimpleLineIcons
                         name="bell"
                         size={iconSize}
-                        color={currentScreen === 'ScreenName' ? Colors.green : Colors.neutral.black}
+                        color={currentScreen === 'ScreenName' ? Colors.primary.primary100 : Colors.neutral.black}
                     />
                     <Ionicons
                         name={currentScreen === 'ScreenName' ? 'person' : 'person-outline'}
                         size={iconSize}
-                        color={currentScreen === 'ScreenName' ? Colors.green : Colors.neutral.black}
+                        color={currentScreen === 'ScreenName' ? Colors.primary.primary100 : Colors.neutral.black}
                     />
                 </View>
             </ImageBackground>
@@ -77,6 +77,10 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         paddingHorizontal: 20,
+        shadowColor: Colors.neutral.gray3,
+        shadowOffset: { width: 0, height: 0 },
+        shadowOpacity: 0.1,
+        shadowRadius: 3,
     },
     navBarIconsContainer: {
         flex: 2,
@@ -90,14 +94,14 @@ const styles = StyleSheet.create({
     addReceptButton: {
         height: 55,
         width: 55,
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.primary.primary100,
         justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
         alignSelf: 'center',
         bottom: '75%',
         borderRadius: '50%',
-        zIndex: 99999,
+        zIndex: 50,
     },
     pressedButton: {
         opacity: 0.8,
